@@ -1,0 +1,24 @@
+{
+  "purchases": [
+    { "category": "Groceries", "name": "Milk", "amount": 2, "price": 1.5, "date": "03-01-2025" },
+    { "category": "Groceries", "name": "Eggs", "amount": 1, "price": 2.0, "date": "04-01-2025" },
+    { "category": "Groceries", "name": "Bread", "amount": 1, "price": 1.0, "date": "04-01-2025" },
+    { "category": "Entertainment", "name": "Movie Ticket", "amount": 2, "price": 10.0, "date": "10-02-2025" },
+    { "category": "Transport", "name": "Bus Ticket", "amount": 10, "price": 1.25, "date": "11-02-2025" },
+    { "category": "Groceries", "name": "Bananas", "amount": 6, "price": 0.2, "date": "12-02-2025" },
+    { "category": "Health", "name": "Vitamins", "amount": 1, "price": 15.0, "date": "01-03-2025" },
+    { "category": "Groceries", "name": "Chicken Breast", "amount": 3, "price": 4.5, "date": "02-03-2025" },
+    { "category": "Entertainment", "name": "Concert Ticket", "amount": 1, "price": 75.0, "date": "05-03-2025" },
+    { "category": "Transport", "name": "Taxi Ride", "amount": 1, "price": 12.0, "date": "01-04-2025" },
+    { "category": "Groceries", "name": "Rice", "amount": 1, "price": 3.0, "date": "03-04-2025" },
+    { "category": "Clothing", "name": "T-Shirt", "amount": 2, "price": 12.0, "date": "04-04-2025" },
+    { "category": "Clothing", "name": "Jeans", "amount": 1, "price": 40.0, "date": "07-04-2025" },
+    { "category": "Transport", "name": "Train Ticket", "amount": 1, "price": 22.5, "date": "10-04-2025" },
+    { "category": "Entertainment", "name": "Video Game", "amount": 1, "price": 60.0, "date": "11-04-2025" },
+    { "category": "Groceries", "name": "Apples", "amount": 5, "price": 0.35, "date": "14-04-2025" },
+    { "category": "Transport", "name": "Bike Repair", "amount": 1, "price": 25.0, "date": "15-04-2025" },
+    { "category": "Health", "name": "Doctor Visit", "amount": 1, "price": 90.0, "date": "19-04-2025" },
+    { "category": "Clothing", "name": "Sneakers", "amount": 1, "price": 55.0, "date": "20-04-2025" },
+    { "category": "Groceries", "name": "Yogurt", "amount": 4, "price": 0.75, "date": "21-04-2025" }
+  ]
+}

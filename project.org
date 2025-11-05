@@ -1,0 +1,160 @@
+#+TITLE: Expense Tracker Design
+#+AUTHOR: banana-4
+#+DATE: <2025-10-29 Wed>
+#+OPTIONS: toc:nil num:nil
+
+* The Goal
+Process purchases over any period of time to understand:
+- How money is spent
+- Where money is spent
+- How much money is spent
+
+All computations are performed within a defined timeframe.
+
+---
+
+* Purchases Record
+Each purchase record contains the following data fields:
+
+1. *Category* – group name for the item (e.g., Food, Transport, Utilities)
+2. *Name* – name of the purchased item
+3. *Date* – date of purchase
+4. *Price* – price of a single item
+5. *Amount* – number of items bought
+
+The total amount for a purchase is calculated as:
+=total = price × amount=
+
+---
+
+* Tasks
+
+** 1. Group Purchases
+   - By *category*
+   - By *date* (daily, weekly, monthly, etc.)
+
+** 2. Compute Spending (within a timeframe)
+   - Total amount spent
+   - Amount spent in a category
+   - Amount spent on a specific item
+
+** 3. Display or Visualize Data (for a timeframe)
+   - By *category* – single or multiple categories
+   - By *date* – spending over time
+   - By *item name* – detailed per-item breakdown
+
+---
+
+* Data Model
+#+DATE: <2025-10-29 Wed>
+
+** Purchase
+A *Purchase* record is modeled as an object.  
+It is responsible for:
+- Holding all purchase-related data  
+- Validating its values during initialization  
+- Ensuring proper modification of attributes  
+- Providing controlled access to individual fields (such as name, category, and price)
+
+#+BEGIN_SRC text
+class Purchase:
+      category;
+      name;
+      amount;
+      date;
+      price;
+      
+      init()
+      set()
+      get()
+#+END_SRC
+  
+---
+
+** Collection of Purchases
+In an earlier design, I converted a collection of purchases into a deeply nested dictionary.  
+I will skip that approach for now.
+
+Creating a complex structure early—before gathering data or understanding algorithmic needs—was a beginner’s mistake.  
+It made the code harder to extend and reason about without providing real benefits.
+
+For now, a *collection of purchases* will simply be represented as a list of purchase records.  
+Once the system works and usage patterns are better understood, I can refactor or optimize the structure as needed.
+
+---
+
+** File storage
+
+My previous try involved using csv, it was not the right format for my data. I need a structured way of storing data in a file. The perfect format is json.
+
+---
+
+*** Purchases as JSON
+#+BEGIN_SRC js
+{
+    "purchases": [
+        {
+            "category": "Food",
+            "name" : "Banana",
+            "price" : 1.3,
+            "amount" : 2,
+            "date" : "1-1-1970"
+        },
+        {
+            "category": "Food",
+            "name" : "Banana",
+            "price" : 1.3,
+            "amount" : 2,
+            "date" : "1-1-1970"
+        }
+    ]
+}
+#+END_SRC
+
+* Folder Organization
+Project folder layout for development and testing.
+
+#+BEGIN_SRC text
+expense-tracker/
+├── README.org           # Project documentation and design notes
+├── library/                 # Source files
+│   ├── models/          # Data model definitions
+│   ├── compute/         # Spending analysis logic
+│   └── visualize/       # Visualization and reporting components
+├── data/                # Example or test data files  
+├── tests/               # Unit and integration tests
+├── style/               # CSS styles for textual 
+#+END_SRC
+
+---
+
+* Moduls:
+#+DATE: <2025-11-05 Wed>
+To make the app extensable it is broken into modules.
+** Module groups:
+
+1. Data modules - handle the program data
+   - Purchases objects - models of purchases
+   - Expenses  object - model of a collection of purchases, responsbile for storing and accsessing purchases, model of a purchases collection.
+
+2. Analitical modules - handle analisis of data, purchases
+   - Calculating total maount of money spent for a time period, summing modules
+
+3. UI/UX modules:
+   - Textual user interface - handles drawing of ui and user inputs.
+
+---
+
+* Next steps:
+- make a basic textual user interface
+- plug in the expenses class
+- add show all purchases functionality
+
+---  
+
+* UI Design:
+Start simple.
+class UI that extends textual App,
+
+  
+   

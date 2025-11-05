@@ -1,9 +1,9 @@
 import json
-from purchase import Purchase
+from library.models.purchase import Purchase
 from typing import List, Generator, Tuple
 
 class Expenses:
-    def __init__(self, filename = "../data/expenses.json"):
+    def __init__(self, filename = "data/expenses.json"):
         self.expenses = []
         self.filename = filename
         self.load()
@@ -28,8 +28,11 @@ class Expenses:
             self.expenses.append(Purchase(category, name, amount, price, date))
             return True
         except ValueError:
-            return False
-        
+            return False    
+
+    def all_items(self):
+        return self.expenses
+    
     def filter_items(self, value: int | float | str, key: str) -> Generator[Tuple[Purchase, int], None, None]:
         functions = {
             "name" : lambda p, value: p.name == value,

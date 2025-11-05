@@ -1,10 +1,12 @@
-class Purchase:
+import re
 
+class Purchase:
+    
     def __init__(self, category: str, name: str, amount: int, price: float, date: str):
         self._category = category
         self._name = name
 
-        if amount < 0 and isinstance(amount, int):
+        if amount > 0 and isinstance(amount, int):
             self._amount = amount
         else:
             raise ValueError("Amount must be a positive integer.")
@@ -101,7 +103,7 @@ class Purchase:
         else:
             return False
         
-  def to_dict(self):
+    def to_dict(self):
         return {
             "name": self.name,
             "category": self.category,
